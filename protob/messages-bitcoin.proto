@@ -137,6 +137,19 @@ message SignTx {
 }
 
 /**
+ * Request: Ask device to sign a transaction input
+ * @start
+ * @next MessageSignature
+ * @next Failure
+ */
+message SignTxInput {
+    repeated uint32 address_n = 1;                                      // BIP-32 path to derive the key from master node
+    required bytes tx_input = 2;                                        // transaction input to be signed (txid:index)
+    optional string coin_name = 3 [default='Bitcoin'];                  // coin to use for signing
+    optional InputScriptType script_type = 4 [default=SPENDADDRESS];    // used to distinguish between various address formats (non-segwit, segwit, etc.)
+}
+  
+/**
  * Response: Device asks for information for signing transaction or returns the last result
  * If request_index is set, device awaits TxAck message (with fields filled in according to request_type)
  * If signature_index is set, 'signature' contains signed input of signature_index's input
