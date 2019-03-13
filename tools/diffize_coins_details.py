@@ -42,7 +42,7 @@ def diffize_file(coins_details, tmp):
 def cli():
     """Compare data from trezor.io/coins with current coins_details.json
 
-    Shows a nicely formatted diff between the live version and the trezor-common
+    Shows a nicely formatted diff between the live version and the excalibur-common
     version. Useful for catching auto-generation problems, etc.
     """
     live_json = requests.get(LIVE_URL).json()

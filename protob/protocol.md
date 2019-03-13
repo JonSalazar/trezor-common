@@ -1,4 +1,4 @@
-# TREZOR Protocol
+# Excalibur Protocol
 
 ## version 1
 

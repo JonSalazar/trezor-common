@@ -9,7 +9,7 @@ based on Bitcoin code. The `coins/` subdirectory is a compatibility link to `bit
 
 Each Bitcoin-like coin must have a single JSON file in the `bitcoin/` subdirectory,
 and a corresponding PNG image with the same name. The PNG must be 96x96 pixels and
-the picture must be a circle suitable for displaying on Trezor T.
+the picture must be a circle suitable.
 
 Testnet is considered a separate coin, so it must have its own JSON and icon.
 
@@ -25,9 +25,9 @@ file.
 
 `ethereum/tokens` is a submodule linking to [Ethereum Lists](https://github.com/ethereum-lists/tokens)
 project with descriptions of ERC20 tokens. If you want to add or update a token
-definition in Trezor, you need to get your change to the `tokens` repository first.
+definition in Excalibur, you need to get your change to the `tokens` repository first.
 
-Trezor will only support tokens that have a unique symbol.
+Excalibur will only support tokens that have a unique symbol.
 
 #### `nem`
 
@@ -114,10 +114,7 @@ External contributors should not touch this file unless asked to.
 
 # Support Information
 
-We keep track of support status of each coin over our devices. That is
-`trezor1` for Trezor One, `trezor2` for Trezor T, `connect` for [Connect](https://github.com/trezor/connect)
-and `webwallet` for [Trezor Wallet](https://wallet.trezor.io/). In further description, the word "device"
-applies to Connect and webwallet as well.
+We keep track of support status of each coin over our devices.
 
 This information is stored in [`support.json`](support.json).
 External contributors should not touch this file unless asked to.
@@ -125,7 +122,7 @@ External contributors should not touch this file unless asked to.
 Each coin on each device can be in one of four support states:
 
 * **supported** explicitly: coin's key is listed in the device's `supported`
-  dictionary. If it's a Trezor device, it contains the firmware version from which
+  dictionary. If it's a Excalibur device, it contains the firmware version from which
   it is supported. For connect and webwallet, the value is simply `true`.
 * **unsupported** explicitly: coin's key is listed in the device's `unsupported`
   dictionary. The value is a string with reason for not supporting.  

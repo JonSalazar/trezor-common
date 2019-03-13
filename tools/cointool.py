@@ -452,7 +452,6 @@ def check_segwit(coins):
 
 def convert_icon(icon):
     """Convert PIL icon to TOIF format"""
-    # TODO: move this to python-trezor at some point
     DIM = 32
     icon = icon.resize((DIM, DIM), Image.LANCZOS)
     # remove alpha channel, replace with black
@@ -749,7 +748,7 @@ def dump(
 @cli.command()
 @click.option("-o", "--outfile", type=click.File(mode="w"), default="./coindefs.json")
 def coindefs(outfile):
-    """Generate signed coin definitions for python-trezor and others
+    """Generate signed coin definitions
 
     This is currently unused but should enable us to add new coins without having to
     update firmware.

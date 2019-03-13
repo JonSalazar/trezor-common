@@ -17,12 +17,12 @@ the following commands:
 
 * **`render`**: generate code based on a [Mako](http://docs.makotemplates.org/en/latest/index.html)
   template. By default, `cointool.py render foo.bar.mako` will put its result into
-  file `foo.bar` in the same directory. See [usage in `trezor-core`](https://github.com/trezor/trezor-core/commit/348b99b8dc5bcfc4ab85e1e7faad3fb4ef3e8763).
+  file `foo.bar` in the same directory.
 * **`check`**: check validity of json definitions and associated data. Used in CI.
 * **`dump`**: dump coin information, including support status, in JSON format. Various
   filtering options are available, check help for details.
 * **`coindefs`**: generate signed protobuf descriptions of coins. This is for future use
-  and could allow us to not need to store coin data in Trezor itself.
+  and could allow us to not need to store coin data in Excalibur itself.
 
 Use `cointool.py command --help` to get more information on each command.
 
@@ -114,11 +114,11 @@ misc:ONT - Ontology (ONT)
  * webwallet : NO
 ```
 
-Afterwards, review and commit changes to `defs/support.json`, and update the `trezor-common`
+Afterwards, review and commit changes to `defs/support.json`, and update the `excalibur-common`
 submodule in your target firmware.
 
 If you're adding multiple coins at once, you can use `support.py release 1 --soon` to automatically
-add all currently-unknown coins to _soon_. (The `1` indicates that this is for Trezor One)
+add all currently-unknown coins to _soon_.
 
 ERC20 tokens in _unknown_ state are considered _soon_ as well, unless their symbols
 are duplicates. Use `support.py fix` to synchronize duplicate status in `support.json` file.
@@ -141,10 +141,6 @@ git add defs/ethereum/tokens
 ```sh
 ./tools/support.py release 2
 ```
-
-The number `2` indicates that you are releasing Trezor 2. The version will be
-automatically determined, based on currently released firmwares. Or you can explicitly
-specify the version with `-r 2.1.0`.
 
 All currently known unreleased ERC20 tokens are automatically set to the given version.
 
@@ -173,6 +169,5 @@ previous step, don't forget to `git push --tags` too.
 
 #### **Step 4:** update submodule in your target repository
 
-Go to `trezor-core` or `trezor-mcu` checkout and update the submodule. Checkout the
-appropriate tag if you created it. If you're in `trezor-core`, run `make templates`
-to update source files.
+Go to `excalibur-mcu` checkout and update the submodule. Checkout the
+appropriate tag if you created it.

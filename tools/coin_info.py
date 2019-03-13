@@ -272,7 +272,7 @@ def get_support_data():
 
 
 def latest_releases():
-    """Get latest released firmware versions for Trezor 1 and 2"""
+    """Get latest released firmware versions for Excalibur"""
     if not requests:
         raise RuntimeError("requests library is required for getting release info")
 
@@ -322,11 +322,11 @@ def support_info_single(support_data, coin):
 
 
 def support_info(coins):
-    """Generate Trezor support information.
+    """Generate Excalibur support information.
 
     Takes a collection of coins and generates a support-info entry for each.
     The support-info is a dict with keys based on `support.json` keys.
-    These are usually: "trezor1", "trezor2", "connect" and "webwallet".
+    These are usually: "excalibur", "connect" and "webwallet".
 
     The `coins` argument can be a `CoinsInfo` object, a list or a dict of
     coin items.
